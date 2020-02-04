@@ -1,0 +1,12 @@
+.filter {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 0;
+
+    span {
+        font-size: 10px;
+        margin-right: 10px;
+        text-transform: uppercase;
+    }
+}

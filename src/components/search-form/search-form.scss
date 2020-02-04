@@ -1,0 +1,36 @@
+.header {
+    background-image: url('../../assets/images/header.jpg');
+    background-size: cover;
+    color: #fff;
+    min-height: 400px;
+    padding: 0 60px;
+    position: relative;
+}
+
+.heading {
+    font-family: fantasy;
+    font-size: 40px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.form {
+    padding: 0 60px;
+    position: relative;
+}
+
+.search-container {
+    position: relative;
+}
+
+.button-action {
+    background: #f55263;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: auto;
+    padding: 10px 80px;
+    text-transform: uppercase;
+}

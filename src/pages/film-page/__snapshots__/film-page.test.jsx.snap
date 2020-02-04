@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilmPage component should be rendered correctly 1`] = `
+<Fragment>
+  <Connect(FilmDetails)
+    filmId={11111}
+    onCloseFilmHandler={[Function]}
+  />
+  <withRouter(Connect(SameGenreFilms))
+    filmId={11111}
+    onOpenFilmHandler={[Function]}
+  />
+  <Footer />
+</Fragment>
+`;

@@ -1,0 +1,30 @@
+.header {
+    background-image: url('../../assets/images/header.jpg');
+    background-size: cover;
+    color: #fff;
+    min-height: 400px;
+    padding: 0 60px;
+    position: relative;
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    min-height: 300px;
+    position: relative;
+}
+
+.poster {
+    padding: 30px;
+}
+
+.description {
+    padding: 40px 0;
+}
+
+.summary {
+    color: #fff;
+    font-size: 14px;
+    margin: 20px 0;
+    padding-right: 100px;
+}

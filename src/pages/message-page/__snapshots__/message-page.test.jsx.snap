@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessagePage component should be rendered correctly 1`] = `
+<Fragment>
+  <Connect(SearchForm)
+    submitHandler={[Function]}
+  />
+  <ResultsMessage
+    message="alert message"
+  />
+  <Footer />
+</Fragment>
+`;
