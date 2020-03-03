@@ -24,8 +24,9 @@ export default ({ clientStats }) => async (req, res) => {
         const reduxStore = createStore(rootReducer, applyMiddleware(thunk));
 
         const context = {};
+        const data = await fetchData();
         reduxStore
-            .dispatch(fetchData())
+            .dispatch(data)
             .then(() => {
                 const app = (
                     <ErrorBoundary>

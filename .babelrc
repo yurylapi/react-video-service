@@ -1,0 +1,29 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "browsers": [
+          "last 2 versions",
+          "> 1%"
+        ]
+      }
+    }],
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ],
+  "sourceType": "unambiguous",
+  "plugins": [
+    "universal-import",
+    "@babel/plugin-proposal-class-properties",
+    ["@babel/plugin-transform-runtime", {
+      "regenerator": true
+    }]
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    }
+  }
+}

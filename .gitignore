@@ -1,0 +1,6 @@
+# Dependency directories
+node_modules/
+src/components/*/__snapshots__
+public/*
+.eslintcache
+coverage/

@@ -18,7 +18,4 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(changeSearchInput(searchInput))
 });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(SearchForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);

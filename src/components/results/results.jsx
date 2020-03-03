@@ -4,10 +4,13 @@ import styles from './results.scss';
 import ResultsCount from '../results-count';
 import ResultsBody from '../results-body';
 import ResultsSort from '../results-sort';
+import { fetchData } from '../../actions/results-actions';
 
 class Results extends React.PureComponent {
-    componentDidMount() {
-        this.props.fetchData();
+    async componentDidMount() {
+        const { dispatch } = this.props;
+        const data = await fetchData();
+        dispatch(data);
     }
 
     render() {
@@ -49,7 +52,8 @@ Results.propTypes = {
     results: PropTypes.array,
     error: PropTypes.object,
     loading: PropTypes.bool,
-    onOpenFilmHandler: PropTypes.func
+    onOpenFilmHandler: PropTypes.func,
+    fetchData: PropTypes.func
 };
 
 Results.defaultProps = {

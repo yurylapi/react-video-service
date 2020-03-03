@@ -58,8 +58,10 @@ const withProvider = story => (
     <Provider store={reduxStore}>{story()}</Provider>
 );
 
+const asyncData = async () => await fetchData();
+
 storiesOf('Results/ResultsDefault', module)
     .addDecorator(withProvider)
     .add('standard', () => (
-        <Results fetchData={fetchData} results={films} onOpenFilmHandler={action('clicked')} />
+        <Results fetchData={asyncData} results={films} onOpenFilmHandler={action('clicked')} />
     ));

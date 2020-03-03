@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es6",
+    "inlineSources": true,
+    "noImplicitAny": true,
+    "outDir": "./public",
+    "removeComments": true,
+    "jsx": "react",
+    "allowJs": true
+  },
+  "include": ["./src/**/**/*"],
+  "exclude": ["node_modules"]
+}

@@ -10,7 +10,4 @@ const mapDispatchToProps = (dispatch) => ({
     changeSortHandler: (sortCriteria) => dispatch(changeSort(sortCriteria))
 });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(ResultsSort);
+export default connect(mapStateToProps, mapDispatchToProps)(ResultsSort);

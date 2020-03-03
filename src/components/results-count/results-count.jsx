@@ -13,10 +13,18 @@ const ResultsCount = (props) => {
             resultsCount = <span />;
             break;
         case 1:
-            resultsCount = <span className={styles.resultsCount}>{props.count} movie found</span>;
+            resultsCount = (
+                <span className={styles.resultsCount}>
+                    {props.count} movie found
+                </span>
+            );
             break;
         default:
-            resultsCount = <span className={styles.resultsCount}>{props.count} movies found</span>
+            resultsCount = (
+                <span className={styles.resultsCount}>
+                    {props.count} movies found
+                </span>
+            );
     }
 
     return resultsCount;

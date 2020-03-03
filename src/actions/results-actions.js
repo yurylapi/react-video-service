@@ -31,10 +31,11 @@ export const fetchDataFailure = (error) => ({
     payload: { error }
 });
 
-const getData = (apiUrl) =>
-    fetch(apiUrl)
-        .then(handleErrors)
-        .then((res) => res.json());
+const getData = async (apiUrl) => {
+    let response = await fetch(apiUrl);
+    response = handleErrors(response);
+    return response.json();
+};
 
 /* eslint-disable */
 export const fakeGetData = () =>
@@ -49,14 +50,15 @@ export const fakeGetData = () =>
     });
 /* eslint-enable */
 
-export function fetchData() {
+export async function fetchData() {
     return async (dispatch) => {
-        dispatch(fetchDataBegin());
-        return await getData(API_URL)
-            .then((json) => {
-                dispatch(fetchDataSuccess(json.data));
-                return json.data;
-            })
-            .catch((error) => dispatch(fetchDataFailure(error)));
+        let json;
+        try {
+            dispatch(fetchDataBegin());
+            json = await getData(API_URL);
+            dispatch(fetchDataSuccess(json.data));
+        } catch (error) {
+            dispatch(fetchDataFailure(error));
+        }
     };
 }

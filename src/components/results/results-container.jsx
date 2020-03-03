@@ -1,8 +1,6 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 import Results from './results';
-import { fetchData } from '../../actions/results-actions';
 
 const filterByTitle = (value) => (item) =>
     item.title.toLowerCase().includes(value);
@@ -35,17 +33,4 @@ const mapStateToProps = (
     };
 };
 
-const mapDispatchToProps = (dispatch) =>
-    bindActionCreators(
-        {
-            fetchData
-        },
-        dispatch
-    );
-
-export default withRouter(
-    connect(
-        mapStateToProps,
-        mapDispatchToProps
-    )(Results)
-);
+export default withRouter(connect(mapStateToProps)(Results));
