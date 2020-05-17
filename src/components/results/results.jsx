@@ -17,11 +17,15 @@ class Results extends React.PureComponent {
         const { results, error, loading, onOpenFilmHandler } = this.props;
 
         if (error) {
-            return <div>Error! {error.message}</div>;
+            return (
+                <div className={styles.resultsError}>
+                    Error! {error.message}
+                </div>
+            );
         }
 
         if (loading) {
-            return <div>Loading...</div>;
+            return <div className={styles.resultsHeading}>Loading...</div>;
         }
 
         if (!results.length) {

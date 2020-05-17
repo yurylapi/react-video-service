@@ -15,7 +15,7 @@ const SearchForm = ({
     <header className={styles.header}>
         <Logo />
         <h1 className={styles.heading}>Find your movie</h1>
-        <form onSubmit={onSubmitSearch}>
+        <form className={styles.form} onSubmit={onSubmitSearch}>
             <SearchField
                 value={searchString}
                 onChange={(event) =>

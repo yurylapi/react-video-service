@@ -3,7 +3,9 @@ import styles from './logo.scss';
 
 const Logo = () => (
     <div className={styles.logo}>
-        <span>Netflix</span>Roulette
+        <a href="/">
+            <span>Netflix</span>Roulette
+        </a>
     </div>
 );
 

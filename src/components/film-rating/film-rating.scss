@@ -1,12 +1,14 @@
 .rating {
-    border: 1px solid #000;
+    border: 2px solid #fff;
     border-radius: 50%;
-    color: #000;
+    color: #fff;
     display: inline-block;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: bold;
     height: 30px;
     line-height: 26px;
     text-align: center;
     width: 30px;
+    vertical-align: middle;
+    margin: 0 10px;
 }

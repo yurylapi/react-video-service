@@ -7,7 +7,7 @@ const ResultsSortList = (props) => {
             key={option}
             title={option}
             classModifier={
-                props.currentOption === option ? 'button-checked' : ''
+                props.currentOption === option ? 'button-checked' : 'button'
             }
             onClick={() => props.onResultsSortChange(option)}
         />
