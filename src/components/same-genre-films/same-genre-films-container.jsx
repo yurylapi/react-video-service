@@ -6,6 +6,9 @@ const mapStateToProps = ({ results }, { filmId, onOpenFilmHandler }) => {
     const films = results.movies;
 
     const openedFilm = films.find(({ id }) => id === filmId);
+    if (!openedFilm) {
+        return {};
+    }
     const openedFilmGenres = openedFilm.genres;
     const sameGenreFilms = films
         .filter((film) =>

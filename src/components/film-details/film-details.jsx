@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router';
 import FilmPropTypesShape from '../../lib/prop-type-shapes/film-prop-types-shape';
 import styles from './film-details.scss';
 import ItemImage from '../item-image';
@@ -10,36 +11,39 @@ import FilmDescription from '../film-description';
 import Button from '../button';
 import Logo from '../logo';
 
-const FilmDetails = ({ film, onCloseFilmHandler }) => (
-    <header className={styles.header}>
-        <Logo />
-        <Button
-            onClick={onCloseFilmHandler}
-            title="SEARCH"
-            classModifier="buttonBack"
-        />
+const FilmDetails = ({ film, onCloseFilmHandler }) =>
+    !film ? (
+        <Redirect to="/404" />
+    ) : (
+        <header className={styles.header}>
+            <Logo />
+            <Button
+                onClick={onCloseFilmHandler}
+                title="SEARCH"
+                classModifier="buttonBack"
+            />
 
-        <div className={styles.details}>
-            <div className={styles.poster}>
-                <ItemImage
-                    classModifier="cover"
-                    img={film.poster_path}
-                    alt={film.title}
-                />
+            <div className={styles.details}>
+                <div className={styles.poster}>
+                    <ItemImage
+                        classModifier="cover"
+                        img={film.poster_path}
+                        alt={film.title}
+                    />
+                </div>
+                <div className={styles.description}>
+                    <FilmTitle title={film.title} />
+                    <FilmRating rating={film.vote_average} />
+                    <FilmGenre genres={film.genres} />
+                    <FilmDurationAndYear
+                        duration={film.runtime}
+                        year={film.release_date}
+                    />
+                    <FilmDescription description={film.overview} />
+                </div>
             </div>
-            <div className={styles.description}>
-                <FilmTitle title={film.title} />
-                <FilmRating rating={film.vote_average} />
-                <FilmGenre genres={film.genres} />
-                <FilmDurationAndYear
-                    duration={film.runtime}
-                    year={film.release_date}
-                />
-                <FilmDescription description={film.overview} />
-            </div>
-        </div>
-    </header>
-);
+        </header>
+    );
 
 export default FilmDetails;
 
